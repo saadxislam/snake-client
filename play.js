@@ -1,9 +1,15 @@
-const {connect, setupInput} = require('./client'); //acquiring it 
+const { builtinModules } = require('module');
+const { connect } = require('./client');
+const { setupInput } = require('./input');
 
 
 console.log('Connecting ...');
+// connect();
 
-connect();
-setupInput();
+
+
+setupInput(connect());
+
+
 
 

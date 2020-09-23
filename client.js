@@ -30,35 +30,6 @@ const net = require('net');
   return conn;
 }
 
-/**
- * Setup User Interface 
- * Specifically, so that we can handle user input via stdin
- */
-
-const handleUserInput = (key) => {
-  if (key === '\u0003') {
-    process.exit();
-  };
-}
-
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding('utf8');
-  stdin.resume();
-
-
-  stdin.on('data', (data) => {
-    handleUserInput(data);
-  });
-
-  return stdin;
-}
-
-
-module.exports = {
-  connect,
-  setupInput
-}  
+module.exports = { connect };
 
 
